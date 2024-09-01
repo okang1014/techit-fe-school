@@ -19,6 +19,11 @@ strong {
   font-weight: unset;
 }
 
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
 /* Custom Properties */
 :root {
   --color-white: #FFF;
@@ -140,9 +145,16 @@ body {
   width: 280px;
   aspect-ratio: 280 / 148;
 }
+.content-cover-src {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .content-text {
   flex-grow: 1;
-  padding: 16px 22px;
+  min-width: 0;
+  flex-basis: 500px;
+  padding: 16px 22px 22px;
 }
 .content-title {
   box-shadow: inset 0 0 10px blue;
