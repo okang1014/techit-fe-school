@@ -1,0 +1,217 @@
+/* CSS Resets */
+body, ul, p {
+  margin: unset;
+  padding: unset;
+}
+
+h1, h2 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+/* Layout */
+.l_wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.l_row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  margin: 30px -15px;
+}
+.l_col {
+  width: calc( 100% / 3 );
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Typography */
+:root {
+  font-family: arial;
+}
+
+/*
+ * 한글 폰트 설정
+  font-family: "Noto Sans KR", sans-serif;
+*/
+
+/* Custom Properties */
+:root {
+  --point-color: #F60;
+}
+
+.green > * {
+  --point-color: #17A651;
+}
+.blue > * {
+  --point-color: #0075FF;
+}
+
+/* Components */
+body {
+  background-color: #D9D9D9;
+}
+
+.header {
+  background-color: #FFF;
+}
+.header-container {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+}
+.header-title {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--point-color);
+}
+.header-icon {
+  flex-shrink: 0;
+  width: 124px;
+}
+
+.card {
+  background-color: #FFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25% );
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-header {
+  /* card-header placeholder */
+  aspect-ratio: 3 / 2;
+
+  /* cover-image의 stacking context */
+  position: relative;
+  z-index: 0;
+
+  /* cover-title이 효과적으로 레이아웃 될 수 있게 */
+  display: flex;
+  align-items: flex-end;
+}
+.card-title {
+  background-color: rgb( 0 0 0 / .8);
+  margin-top: -48px;
+  margin-right: 10px;
+  padding: 0 20px;
+  max-width: fit-content;
+  height: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 48px;
+  color: var(--point-color);
+  border-radius: 0 12px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #666;
+  flex-grow: 1;
+}
+.card-text strong {
+  color: var(--point-color);
+}
+.card-tags {
+  background-color: #F4F4F4;
+  padding: 26px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  background-color: var(--point-color);
+  height: 22px;
+  padding: 0 8px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  color: #FFF;
+  line-height: 22px;
+  border-radius: 11px;
+}
+.tag::before {
+  content: '# ';
+  color: #FFFFFF80;
+}
+
+.footer {
+  font-size: 12px;
+  color: #AAA;
+  letter-spacing: .24em;
+  margin-bottom: 40px;
+}
+
+
+@media (max-width: 800px) {
+  .l_col_tab_12_12 { width: 100%; }
+  .l_col_tab_11_12 { width: 91.66666667%; }
+  .l_col_tab_10_12 { width: 83.33333333%; }
+  .l_col_tab_9_12  { width: 75%; }
+  .l_col_tab_8_12  { width: 66.66666667%; }
+  .l_col_tab_7_12  { width: 58.33333333%; }
+  .l_col_tab_6_12  { width: 50%; }
+  .l_col_tab_5_12  { width: 41.66666667%; }
+  .l_col_tab_4_12  { width: 33.33333333%; }
+  .l_col_tab_3_12  { width: 25%; }
+  .l_col_tab_2_12  { width: 16.66666667%; }
+  .l_col_tab_1_12  { width: 8.33333333%; }
+}
+
+@media(max-width: 600px) {
+  .header-container {
+    flex-direction: column-reverse;
+    padding: 40px 80px;
+    gap: 16px;
+  }
+  .l_col_m_12_12 { width: 100%; }
+  .l_col_m_11_12 { width: 91.66666667%; }
+  .l_col_m_10_12 { width: 83.33333333%; }
+  .l_col_m_9_12  { width: 75%; }
+  .l_col_m_8_12  { width: 66.66666667%; }
+  .l_col_m_7_12  { width: 58.33333333%; }
+  .l_col_m_6_12  { width: 50%; }
+  .l_col_m_5_12  { width: 41.66666667%; }
+  .l_col_m_4_12  { width: 33.33333333%; }
+  .l_col_m_3_12  { width: 25%; }
+  .l_col_m_2_12  { width: 16.66666667%; }
+  .l_col_m_1_12  { width: 8.33333333%; }
+  .card-text {
+    min-height: unset;
+  }
+  .footer-text {
+    text-align: center;
+  }
+}

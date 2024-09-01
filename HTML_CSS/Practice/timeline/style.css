@@ -1,0 +1,142 @@
+/* CSS Reset */
+body, ol, p {
+  margin: unset;
+  padding: unset;
+}
+
+h1, h2 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Typography */
+:root {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Layout */
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+.timeline-header {
+  padding: 50px;
+  text-align: center;
+}
+.l_row {
+  margin: 0 -30px;
+}
+.l_col {
+  width: 50%;
+  padding: 0 30px;
+  box-sizing: border-box;
+  margin: -80px 0;
+}
+.l_col:nth-child(even) {
+  margin-left: auto;
+}
+.l_col:first-child {
+  margin-top: unset;}
+
+/* Design */
+body {
+  background-color: #0055ff;
+}
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.20);
+}
+
+
+/* Header */
+.timeline-header .timeline-title {
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+}
+
+.timeline-header .timeline-title::after {
+  content: ' ';
+  background-color: white;
+  display: block;
+  width: 180px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+.timeline-list {
+  position: relative;
+}
+.timeline-list::before {
+  content: ' ';
+  background-color: skyblue;
+  position: absolute;
+  inset: 0;
+  width: 10px;
+  margin: -10px auto;
+  border-radius: 10px;
+}
+
+.timeline-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.l_col:nth-child(even) .timeline-container {
+  align-items: flex-start;
+}
+.timeline-year {
+  font-size: 24px;
+  font-weight: bold;
+  color: dodgerblue;
+  margin-bottom: 20px;
+  position: relative;
+}
+.timeline-year::before {
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent transparent white;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: -60px;
+}
+.l_col:nth-child(even) .timeline-year::before {
+  right: auto;
+  left: -60px;
+  border-color: transparent white transparent transparent;
+}
+.timeline-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  text-align: right;
+}
+.l_col:nth-child(even) .timeline-text {
+  text-align: unset;
+}
+.button {
+  display: block;
+  max-width: fit-content;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  color: dodgerblue;
+  border: 1px solid;
+  border-radius: 8px;
+}

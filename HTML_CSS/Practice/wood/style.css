@@ -1,0 +1,148 @@
+/* CSS Resets */
+body, p, ul {
+    margin: unset;
+    padding: unset;
+}
+
+h1, h2 {
+    margin: unset;
+    padding: unset;
+    font-size: unset;
+    font-weight: unset;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* Layout */
+.l_wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* .l_row {
+    padding: 30px 0;
+    font-size: 0;
+    margin: 0 -15px;
+}
+
+.l_col {
+    display: inline-block;
+    font-size: initial;
+    width: 33.333333333%;
+    padding: 0 15px;
+    box-sizing: border-box;
+} */
+
+/* flexbox 활용 수정 영역 1 */
+.l_row {
+    padding: 30px 0;
+    display: flex;
+    gap: 30px
+}
+
+.l_col {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+/* Typography */
+:root {
+    font-family: arial;
+}
+
+
+.oaklab-article {
+    background-image: url(images/header-bg.png);
+    padding-top: 100px; 
+    /* margin-top 사용 시 상단 마진 병합 현상 발생, 이에 따른 배경 잘림 현상 발생 */
+}
+
+.oaklab-article .l_wrapper .oaklab-info {
+    color: #FFA500;
+    border-width: 30px 30px 0 30px;
+    border-style: solid;
+    border-color: currentColor;
+    padding: 60px;
+    overflow: hidden;
+}
+
+.oaklab-article .l_wrapper .oaklab-info .oaklab-text {
+    display: inline-block;
+    vertical-align: top;
+    width: 480px; 
+}
+
+.oaklab-article .l_wrapper .oaklab-info .oaklab-text .title {
+    color: currentColor;
+    font-size: 32px;
+    letter-spacing: 0.19em;
+    width: fit-content;
+    margin-bottom: 35px;
+}
+
+.oaklab-article .l_wrapper .oaklab-info .oaklab-text .title::after {
+    content: ' ';
+    display: block;
+    width: 380px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 10px;
+}
+
+.oaklab-article .l_wrapper .oaklab-info .oaklab-text p {
+    line-height: 1.6;
+}
+
+.oaklab-article .l_wrapper .oaklab-info .oaklab-cover {
+    margin-bottom: -120px;
+}
+
+.oaklab-list {
+    background-color: #DDD;
+}
+
+.card {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card .card-cover {
+    vertical-align: bottom;
+}
+
+/* flexbox 활용 수정 영역 2 */
+.card .card-title {
+    border-top: 4px solid #FFA500;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card .card-title h2 {
+    font-weight: bold;
+    color: #FFA500;
+    display: inline-block;
+    /* vertical-align: middle;
+    line-height: 50px;
+    width: 230px; */
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.card .card-title .play-button {
+    vertical-align: top;
+    margin-right: -10px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    line-height: 54px;
+    letter-spacing: .29em;
+    color: #AAA;
+    border-top: 2px solid #AAA;
+}

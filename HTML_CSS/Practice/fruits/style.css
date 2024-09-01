@@ -1,0 +1,59 @@
+div {
+    background-color: white;
+    width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 5px solid;
+    border-radius: 60px 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: black;
+}
+
+/* Kiwi */
+.type_kiwi {
+    background-image: url(images/kiwi-bg.png);
+}
+
+.type_kiwi div {
+    border: 5px solid green;
+}
+
+.type_kiwi h1 {
+    color: green;
+}
+
+/* Orange */
+.type_orange {
+    background-image: url(images/orange-bg.png);
+}
+
+.type_orange div {
+    border: 5px solid orange;
+}
+
+.type_orange h1 {
+    color: orange;
+}
+
+/* Strawberry */
+.type_strawberry {
+    background-image: url(images/straw-bg.png);
+}
+
+.type_strawberry div {
+    border: 5px solid red;
+}
+
+.type_strawberry h1 {
+    color: red;
+}

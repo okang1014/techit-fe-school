@@ -1,0 +1,83 @@
+/* CSS Resets */
+body, p {
+  margin: unset;
+  padding: unset;
+}
+h1 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+/* Typography */
+:root {
+  font-family: Arial, sans-serif;
+  font-size: 62.5%;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+body {
+  font-size: 1.6rem;
+}
+
+/* Custom Properties */
+:root {
+  --background-color: #9C6035;
+  --background-shadow: #46260E;
+  
+  --font-color: #E8BC9C;
+  --title-color: #FFF;
+}
+
+/* Layout */
+body {
+  height: 100vh;
+  display: flex;
+}
+.wrapper {
+  width: 300px;
+  margin: auto;
+}
+
+/* Components */
+body {
+  background-image: url(images/bg.png);
+  background-repeat: repeat;
+  background-size: cover;
+}
+.cover {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+.cover-src {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.content {
+  background-image: url(images/green.png);
+  background-repeat: repeat-x;
+  background-color: var(--background-color);
+  padding: 60px 20px 36px;
+  border-bottom: 10px solid var(--background-shadow);
+  border-radius: 0 0 30px 30px;
+}
+.content-title {
+  margin-bottom: 1rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--title-color);
+}
+.content-text {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--font-color);
+}

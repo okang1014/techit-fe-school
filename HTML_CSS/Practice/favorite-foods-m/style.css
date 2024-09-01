@@ -1,0 +1,215 @@
+/* CSS Resets */
+body, ul, p {
+  margin: unset;
+  padding: unset;
+}
+
+h1, h2 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* Layouts */
+.l_wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.l_row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  margin: 0 -15px;
+  padding: 30px 0;
+}
+
+
+.l_col {
+  width: calc( 100% / 3 );
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.l_col_12_12 { width: 100%; }
+.l_col_11_12 { width: 91.66666667%; }
+.l_col_10_12 { width: 83.33333333%; }
+.l_col_9_12  { width: 75%; }
+.l_col_8_12  { width: 66.66666667%; }
+.l_col_7_12  { width: 58.33333333%; }
+.l_col_6_12  { width: 50%; }
+.l_col_5_12  { width: 41.66666667%; }
+.l_col_4_12  { width: 33.33333333%; }
+.l_col_3_12  { width: 25%; }
+.l_col_2_12  { width: 16.66666667%; }
+.l_col_1_12  { width: 8.33333333%; }
+
+/* Custom Properties */
+:root {
+  --point-color: #F60;
+}
+.type_green > * {
+  --point-color: #17A651;
+}
+.type_blue > * {
+  --point-color: #0075FF;
+}
+
+/* Typography */
+:root {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+
+/* Components */
+.header-container {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+}
+.header-title {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--point-color);
+}
+.header-icon {
+  width: 124px;
+  flex-shrink: 0;
+}
+
+.food-main {
+  background-color: #D9D9D9;
+}
+.card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, .25);
+  display: flex;
+  flex-direction: column;
+  min-height: 434px;
+}
+.card-header {
+  aspect-ratio: 300 / 200;
+}
+.card-cover {
+  width: 100%;
+}
+.card-title {
+  background-color: rgb(0, 0, 0, 0.80);
+  max-width: fit-content;
+  padding: 10px 20px;
+  margin-top: -47.5px;
+  margin-right: 20px;
+  border-top-right-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--point-color);
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+.card-text {
+  font-size: 14px;
+  line-height: 1.4;
+  overflow: hidden;
+}
+.card span {
+  font-weight: bold;
+  color: var(--point-color);
+}
+.card-tags {
+  background-color: #F4F4F4;
+  padding: 26px 18px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.chip {
+  background-color: var(--point-color);
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: white;
+  border-radius: 10px;
+}
+.chip::before {
+  content: '# ';
+  color: #ffffff80;
+}
+/* .fg-orange {color: #FF6600;}
+.bg-orange {background-color: #FF6600;}
+.fg-green  {color: #17A651;}
+.bg-green  {background-color: #17A651;}
+.fg-blue   {color: #0075FF;}
+.bg-blue   {background-color: #0075FF;} */
+
+.food-footer {
+  background-color: #D9D9D9;
+}
+.footer-text {
+  font-size: 12px;
+  color: #AAA;
+  letter-spacing: .24em;
+  padding-bottom: 40px;
+  min-height: 40px;
+}
+
+@media (max-width: 800px) {
+  .l_col_tab_12_12 { width: 100%; }
+  .l_col_tab_11_12 { width: 91.66666667%; }
+  .l_col_tab_10_12 { width: 83.33333333%; }
+  .l_col_tab_9_12  { width: 75%; }
+  .l_col_tab_8_12  { width: 66.66666667%; }
+  .l_col_tab_7_12  { width: 58.33333333%; }
+  .l_col_tab_6_12  { width: 50%; }
+  .l_col_tab_5_12  { width: 41.66666667%; }
+  .l_col_tab_4_12  { width: 33.33333333%; }
+  .l_col_tab_3_12  { width: 25%; }
+  .l_col_tab_2_12  { width: 16.66666667%; }
+  .l_col_tab_1_12  { width: 8.33333333%; }
+}
+
+@media(max-width: 600px) {
+  .header-container {
+    flex-direction: column-reverse;
+    padding: 40px 80px;
+    gap: 16px;
+  }
+  .l_col_m_12_12 { width: 100%; }
+  .l_col_m_11_12 { width: 91.66666667%; }
+  .l_col_m_10_12 { width: 83.33333333%; }
+  .l_col_m_9_12  { width: 75%; }
+  .l_col_m_8_12  { width: 66.66666667%; }
+  .l_col_m_7_12  { width: 58.33333333%; }
+  .l_col_m_6_12  { width: 50%; }
+  .l_col_m_5_12  { width: 41.66666667%; }
+  .l_col_m_4_12  { width: 33.33333333%; }
+  .l_col_m_3_12  { width: 25%; }
+  .l_col_m_2_12  { width: 16.66666667%; }
+  .l_col_m_1_12  { width: 8.33333333%; }
+  .card-text {
+    min-height: unset;
+  }
+  .footer-text {
+    text-align: center;
+  }
+}

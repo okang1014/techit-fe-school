@@ -1,0 +1,105 @@
+/* CSS Resets */
+body, p {
+  margin: unset;
+  padding: unset;
+}
+
+h1 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* Layouts */
+.l_wrapper {
+  box-shadow: inset 0 0 20px lime;
+  width: 640px;
+  margin: 150px auto;
+}
+
+/* Typography */
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.sender > * {
+  --id-color: #6557C0;
+}
+.recipient > * {
+  --id-color: #35E792;
+}
+
+/* Components */
+body {
+  background-color: #222;
+}
+
+.chat-page {
+  background-color: #EEE;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 10px;
+}
+.chat-container {
+  box-shadow: inset 0 0 20px blue;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.chat-container:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.profile-pic {
+  width: 80px;
+  border: 4px solid #FFF;
+  border-radius: 50px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.chat-message {
+  background-color: #FFF;
+  padding: 20px 24px;
+  max-width: 400px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.user_id {
+  box-shadow: inset 0 0 10px turquoise;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--id-color);
+}
+.message {
+  box-shadow: inset 0 0 10px orange;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+.leave {
+  margin: 0 auto;
+}
+.left-chatroom {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #999;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.left-chatroom::before, .left-chatroom::after {
+  content: ' ';
+  display: inline-block;
+  flex-grow: 1;
+  /* width: 200px; */
+  height: 1px;
+  background-color: #999;
+}

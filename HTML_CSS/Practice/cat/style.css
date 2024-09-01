@@ -1,0 +1,39 @@
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(images/bg3.png);
+}
+
+div {
+    background-color: white;
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 30px solid brown;
+    border-radius: 40px 40px 0 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    border-bottom: 5px solid brown;
+    color: brown;
+    width: fit-content;
+    margin: 5px auto 0;
+}
+
+p {
+    background-color: lightgrey;
+    color: grey;
+    padding: 30px;
+    border: 1px solid grey;
+    margin-top: 30px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,77 @@
+/* CSS Resets */
+body, p {
+    margin: unset;
+}
+
+h1 {
+    margin: unset;
+    font-size: unset;
+    font-weight: unset;
+}
+
+/* Typography */
+:root {
+    font-family: arial;
+}
+
+/* Layout */
+.wrapper {
+    width: 300px;
+    margin: 258px auto;
+    text-align: center;
+}
+
+/* Design */
+body {
+    background-color: #DDD;
+}
+
+.pokemon {
+    background-color: #EEE;
+    border-radius: 10px;
+}
+
+.pokemon-main {
+    background-color: white;
+    padding: 0px 20px 44px;
+    border-radius: 10px 10px 0 0 ;
+}
+
+.pokemon-main .cover.pikachu {
+    margin-top: -200px;
+    vertical-align: bottom;
+}
+
+.pokemon-main .pokemon-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #F2AA36; 
+    margin: 20px 0;
+}
+
+.pokemon-main .pokemon-title::after {
+    content: '  ';
+    display: block;
+    width: 77px;
+    height: 4px;
+    margin: 4px auto;
+    background-color: #F2AA36;
+    border-radius: 50px;
+}
+
+.pokemon-main .pokemon-info {
+    color: #888;
+}
+
+.pokemon-main .pokemon-info span {
+    color: #F2AA36;
+    font-weight: bold;
+}
+
+.sns-list {
+    padding: 15px;
+}
+
+.sns-list .sns-icon {
+    vertical-align: middle;
+}
