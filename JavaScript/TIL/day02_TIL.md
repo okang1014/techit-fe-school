@@ -106,7 +106,7 @@ JavaScript는 JavaScript 엔진에 의해 실행, 따라서 HTML Parser는 <scri
 - **코드가 DOM Node를 활용한다면 꼭 DOM Node가 메모리에 로딩된 이후 실행되기 해야한다**
 - 또는 <head></head> 태그 내에 작성한 경우, **이벤트 콜백 함수로 등록, HTML 파싱이 완료된 이후 코드를 실행하도록 해야한다.**
 
-```
+```javascript
 <script>
     window.addEventListener('load', function (e) {
       let selectNode = document.getElementById('a1');
