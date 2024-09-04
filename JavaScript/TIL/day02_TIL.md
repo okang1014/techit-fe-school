@@ -18,6 +18,7 @@ JavaScript는 역사가 꽤나 오래된 언어
 
 ### 3-3. 컴파일 언어 vs 스크립트 언어
 **JavaScript는 대표적인 스크립트 언어이다.**
+
 **스크립트 언어란?**
 - 사람이 작성한 코드(소스)가 별도의 컴파일 단계 없이 컴퓨터(플랫폼)에서 실행되는 언어
 - 즉, 코드를 실행할 때 한 줄 한 줄 컴퓨터가 이해 가능한 언어로 변환하여 실행된다.
@@ -33,9 +34,11 @@ HTML은 HTML Parser, CSS는 CSS 엔진, JavaScript는 JavaScript 엔진에 의�
 ### 3-5. JavaScript의 단점
 **장점** 
 - 탄생 배경 자체가 간단한 연산, 데이터 처리를 위한 소프트웨어 언어이기 때문에 **문법 자체가 유연하고 간단**
+
 **단점**
 - 문법 자체가 다른 언어에 비해 상대적으로 부족 -> 복잡한 앱을 개발하기 위해 여러 어려움을 겪을 수 있음
 단점을 보완하기 위해 만들어진 언어들 중, 가장 대중적으로 사용되는 언어가 **Typescript**
+
 **Typescript**
 - JavaScript 언어의 한계를 보완하기 위해 만들어진 언어
 - 독자적으로 브라우저나 Node.js 의해 실행이 불가 -> 별도의 JavaScript 변형 작업을 거쳐 실행
@@ -44,42 +47,53 @@ HTML은 HTML Parser, CSS는 CSS 엔진, JavaScript는 JavaScript 엔진에 의�
 **플랫폼**
 - 개발한 애플리케이션을 실행시켜주는 환경(OS, 플랫폼 등)
 - JavaScript로 만든 애플리케이션이 실행되는 플랫폼 => 주로 브라우저
+
 **네트워킹**
 - 개인과 개인, 개인과 서버 사이에서 상호 데이터를 주고 받는 과정
+
 **W3C**
 - 웹 표준화 단체 - 모든 브라우저에서 동일하게 작성되고, 동작할 수 있도록 표준을 지정하는 단체
 - HTML, CSS, Web API에 대한 표준 지정
 - ECMA는 JavaScript라는 소프트웨어 언어 자체의 표준을 지정하는 단체
+
 **프로토콜**
 - 클라이언트 - 서버 사이에서 네트워킹하는 과정에서 주고 받는 데이터에 대한 규칙
 - 데이터를 주고 받고, 처리하고 해석하는지까지를 다루는 규칙
 - 웹 앱의 경우 주로 HTTP, HTTPS 프로토콜 사용
+
 **HTTPS**
 - HTTP 프로토콜에 보안을 강화
 - 현재는 대부분 HTTPS 프로토콜 사용
+
 **도메인, IP**
 - 네트워크 상의 주소는 IP - 일반적으로 4개의 숫자가 온점(.)으로 연결 (eg. 111.222.333.444)
 - IP 주소를 외워서 접속하는데 어려움이 있음 -> 도메인은 IP주소의 "별칭"
 - **네트워킹을 위한 주소는 IP주소, 도메인은 편의성을 위한 IP주소의 별칭**
+
 **Node.js**
 - JavaScript가 브라우저가 아닌 다른 곳에서 실행할 수 있도록 하는 Run-timer
 - 백엔드 웹 앱을 개발하는 기술 중 인기 있는 기술
 - Node.js 자체가 서버의 역할을 할 수는 없음
+
 **DOM Node**
 - Document Object Model의 약자
 - HTML 문서를 브라우저의 HTML Parser가 해석, 브라우저 메모리에 저장을 할 때, HTML 문서의 태그를 객체의 계층 구조로 저장
 - 메모리에 저장된 문서의 전체 계층 구조를 DOM, 그리고 각 구성 요소를 node라고 부른다.
 *여기에서의 Node와 Node.js Node는 표기는 동일하지만 다른 의미를 가지고 있다*
+
 **디버깅**
 - 소프트웨어 개발, 또는 실행하는 단계에서 발생하는 오류, 문제를 버그(Bug)라고 부름
 - 이러한 오류, 문제, 버그를 해결하는 과정 == 디버깅(Debugging)
+
 **IDE**
 - Integrated Development Environment 의 약자로 통합적인 개발 환경을 제공해주는 툴을 통칭하는 용어
+
 **API**
 - Application Programming Interface 의 약자
 - 이미 누군가에 의해 만들어진 코드, 기능을 가져와서 사용할 수 있도록 하는 interface
 - 변수명, 함수명이 될 수도 있고, 외부 기능이 될 수도 있다.
-*추후에 학습 예정*
+ *추후에 학습 예정*
+
 **라이브러리**
 - 이미 누군가에 의해 만들어져서 개발 시 사용할 수 있는 코드, 기능의 집합체
 - lib 라고 줄여서 부를 수도 있음
@@ -91,9 +105,11 @@ JavaScript 코드는 **HTML 문서 내**에서 <script></script> 태그를 사�
 이는 브라우저 내의 HTML Parser는 HTML 문서를 파싱하여 문성의 구조를 메모리에 객체의 계층 구조로 저장(DOM)
 JavaScript는 JavaScript 엔진에 의해 실행, 따라서 HTML Parser는 <script></script> 태그를 만나면 해당 코드를 실행시킬 수 있는 엔진 실행
 -> <script type="application/javascript"></script>가 마크업 표준. 하지만 해당 태그 내에 대부분의 JavaScript 코드이기 때문에 별도 지정이 없는 경우 디폴트로 JavaScript 엔진 실행
+
 **HTML 문서 내에 작성**
 - <head></head> 또는 <body></body> 내 에 <script></script> 태그 추가 가능
 - script 태그 내에 스크립트 코드 작성
+
 **HTML 문서 외부에 작성**
 - 별도의 .js 확장자 파일을 생성
 - 해당 파일 내에 스크립트 코드 작성
@@ -106,7 +122,7 @@ JavaScript는 JavaScript 엔진에 의해 실행, 따라서 HTML Parser는 <scri
 - **코드가 DOM Node를 활용한다면 꼭 DOM Node가 메모리에 로딩된 이후 실행되기 해야한다**
 - 또는 <head></head> 태그 내에 작성한 경우, **이벤트 콜백 함수로 등록, HTML 파싱이 완료된 이후 코드를 실행하도록 해야한다.**
 
-```javascript
+```html
 <script>
     window.addEventListener('load', function (e) {
       let selectNode = document.getElementById('a1');
