@@ -68,7 +68,7 @@
 #### 1-4-7. 구글 코딩 컨벤션 가이드
 Link : [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html#naming-camel-case-defined)
 
-### 1-3. 디버깅
+### 1-5. 디버깅
 **디버깅도 실력이다**
 
 개발자도 사람이기 때문에 분명 실수를 할 수 있다. 
