@@ -20,6 +20,7 @@ img {
   font-size: 62.5%;
   word-break: keep-all;
   overflow-wrap: break-word;
+  line-height: 1.2;
 }
 body {
   font-size: 1.6rem;
@@ -35,13 +36,16 @@ body {
 }
 
 /* Layout */
-body {
-  height: 100vh;
+.viewport {
+  min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 .wrapper {
   width: 300px;
-  margin: auto;
+  /* margin: auto; */
 }
 
 /* Components */
@@ -80,4 +84,8 @@ body {
   font-size: 1.6rem;
   line-height: 1.2;
   color: var(--font-color);
+  margin-bottom: 1.2em;
+}
+.content-text:last-child {
+  margin-bottom: 0;
 }
