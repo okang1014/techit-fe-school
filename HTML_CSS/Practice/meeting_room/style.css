@@ -14,7 +14,7 @@ fieldset {
   display: block;
 }
 
-input[type="text"], select {
+input[type="text"], input[type="email"], select {
   all: unset;
 }
 
@@ -54,6 +54,7 @@ button {
 
 body {
   font-size: 1.4rem;
+  color: var(--color-grey-60);
 }
 
 /* Layout */
@@ -67,11 +68,15 @@ body {
   box-shadow: inset 0 0 10px green;
 }
 .wrapper {
-  box-shadow: inset 0 0 10px blue;
   width: 520px;
   margin: auto;
 }
-input[type="text"], select {
+
+
+/* Commons */
+input[type="text"], input[type="email"], select {
+  border: 2px solid var(--color-grey-20);
+  border-radius: 4px;
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -80,6 +85,8 @@ input[type="text"], select {
   line-height: 1;
 }
 textarea {
+  border: 2px solid var(--color-grey-20);
+  border-radius: 4px;
   min-height: 120px;
   display: block;
   width: 100%;
@@ -87,19 +94,17 @@ textarea {
   padding: 14px;
 }
 
-
-/* Commons */
-select, input[type="text"], textarea {
-  border: 2px solid var(--color-grey-20);
-  border-radius: 4px;
+.ir {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
 }
 
 label {
   display: block;
-}
-
-.input-label {
-  margin-bottom: 12px;
 }
 
 .button {
@@ -116,7 +121,6 @@ label {
 
 /* Components */
 .form-title {
-  box-shadow: inset 0 0 10px turquoise;
   margin-bottom: 34px;
   font-size: 3.2rem;
   font-weight: 700;
@@ -125,27 +129,10 @@ label {
 .form-item {
   margin-bottom: 30px;
 }
-.purpose {
-  box-shadow: inset 0 0 10px coral;
+.input-label {
+  margin-bottom: 12px;
 }
-.size {
-  box-shadow: inset 0 0 10px turquoise;
-}
-.radio {
+.choice-group {
   display: flex;
   gap: 18px;
 }
-.equipment {
-  box-shadow: inset 0 0 10px coral;
-}
-.checkbox {
-  display: flex;
-  gap: 28px;
-}
-.reserved_by {
-  box-shadow: inset 0 0 10px turquoise;
-}
-.topic {
-  box-shadow: inset 0 0 10px coral;
-}
-
