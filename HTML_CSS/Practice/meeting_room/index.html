@@ -15,10 +15,11 @@
       <div class="wrapper">
         <h1 class="form-title">회의실 예약</h1>
         <form action="/submit" method="post">
-          <field>
-            <legend>일반 정보</legend>
-            <div>
-              <label for="purpose">어떤 용도로 이용할 예정이신가요?</label>
+          <fieldset class="general-info">
+            <legend class="ir">일반 정보</legend>
+
+            <div class="form-item purpose">
+              <label class="input-label" class="input-label" for="purpose">어떤 용도로 이용할 예정이신가요?</label>
               <select id="purpose">
                 <option>디자이너와의 티타임</option>
                 <option>개발자 코드 리뷰</option>
@@ -26,34 +27,41 @@
               </select>
             </div>
 
-            <div>
-              <label for="size">회의의 규모는 어떠한가요?</label>
-              <label><input type="radio" id="size" name="size">2~8인</label>
-              <label><input type="radio" id="size" name="size">9~20인</label>
-              <label><input type="radio" id="size" name="size">21~100인</label>
+            <div class="form-item size">
+              <label class="input-label" for="size">회의의 규모는 어떠한가요?</label>
+              <div class="radio">
+                <label><input type="radio" id="size" name="size">2~8인</label>
+                <label><input type="radio" id="size" name="size">9~20인</label>
+                <label><input type="radio" id="size" name="size">21~100인</label>
+              </div>
             </div>
 
-            <div>
-              <label for="equipment">어떤 장비가 필요하신가요?</label>
-              <label><input type="checkbox" id="equipment" name="equipment">빔 프로젝터</label>
-              <label><input type="checkbox" id="equipment" name="equipment">화이트보드</label>
-              <label><input type="checkbox" id="equipment" name="equipment">전동데스크</label>
+            <div class="form-item equipment">
+              <label class="input-label" for="equipment">어떤 장비가 필요하신가요?</label>
+              <div class="checkbox">
+                <label><input type="checkbox" id="equipment" name="equipment">빔 프로젝터</label>
+                <label><input type="checkbox" id="equipment" name="equipment">화이트보드</label>
+                <label><input type="checkbox" id="equipment" name="equipment">전동데스크</label>
+              </div>
             </div>
-          </field>
+          </fieldset>
 
-          <field>
-            <legend>개인 정보</legend>
-            <div>
-              <label for="reserved_by">예약자의 성함을 알려주세요.</label>
+          <fieldset class="personal-info">
+            <legend class="ir">개인 정보</legend>
+
+            <div class="form-item reserved_by">
+              <label class="input-label" for="reserved_by">예약자의 성함을 알려주세요.</label>
               <input type="text" id="reserved_by" placeholder="성함 입력">
             </div>
-            <div>
-              <label for="topic">회의의 주제를 남겨 주세요.</label>
+
+            <div class="form-item topic">
+              <label class="input-label" for="topic">회의의 주제를 남겨 주세요.</label>
               <textarea id="topic" placeholder="주제에 대한 짧은 요약"></textarea>
             </div>
-          </field>
 
-          <button type="button">예약 완료하기</button>
+            <button class="button" type="button">예약 완료하기</button>
+          </fieldset>
+
         </form>
       </div>
     <!-- </div> -->
