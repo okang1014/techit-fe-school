@@ -3,6 +3,12 @@ body {
   margin: unset;
 }
 
+.form-title {
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
 /* CSS Variables */
 :root {
   --font-ko: "Noto Sans KR", sans-serif;
@@ -11,6 +17,11 @@ body {
 /* Typography */
 :root {
   font-family: var(--font-ko);
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
 }
 
 /* Layout */

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko-KR">
   <head>
     <title>회의실 예약</title>
+    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -11,7 +12,50 @@
 
     <!-- <div class="viewport"> -->
       <!-- <div class="cover">COVER</div> -->
-      <div class="wrapper">FORM</div>
+      <div class="wrapper">
+        <h1 class="form-title">회의실 예약</h1>
+        <form action="" method="post">
+          <field>
+            <legend>일반 정보</legend>
+            <div>
+              <label>어떤 용도로 이용할 예정이신가요?</label>
+              <select>
+                <option>디자이너와의 티타임</option>
+                <option>개발자 코드 리뷰</option>
+                <option>월간 결산 회의</option>
+              </select>
+            </div>
+
+            <div>
+              <label>회의의 규모는 어떠한가요?</label>
+              <label><input type="radio" name="meeting-size">2~8인</label>
+              <label><input type="radio" name="meeting-size">9~20인</label>
+              <label><input type="radio" name="meeting-size">21~100인</label>
+            </div>
+
+            <div>
+              <label>어떤 장비가 필요하신가요?</label>
+              <label><input type="checkbox" name="equipment">빔 프로젝터</label>
+              <label><input type="checkbox" name="equipment">화이트보드</label>
+              <label><input type="checkbox" name="equipment">전동데스크</label>
+            </div>
+          </field>
+
+          <field>
+            <legend>개인 정보</legend>
+            <div>
+              <label>예약자의 성함을 알려주세요.</label>
+              <input type="text" placeholder="성함 입력">
+            </div>
+            <div>
+              <label>회의의 주제를 남겨 주세요.</label>
+              <textarea placeholder="주제에 대한 짧은 요약"></textarea>
+            </div>
+          </field>
+
+          <button type="button">예약 완료하기</button>
+        </form>
+      </div>
     <!-- </div> -->
 
   </body>
