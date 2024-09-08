@@ -159,6 +159,9 @@ label {
   box-sizing: border-box;
   vertical-align: middle;
 }
+.option.check:has(input:focus)::before {
+  border-color: var(--color-green-50);
+}
 .option.check:has(input:checked)::before {
   background-color: white;
   box-shadow: none;
@@ -183,4 +186,15 @@ label {
 .choice-group {
   display: flex;
   gap: 18px;
+}
+.radio {
+  height: 48px;
+  min-width: 160px;
+  padding: 12px 11px;
+  border: 2px solid var(--color-grey-20);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.radio:has(input:focus) {
+  border-color: var(--color-green-50);
 }
