@@ -53,7 +53,8 @@ button {
   --color-green-70: #5F9976;
   --color-white: #FFFFFF;
   --color-black: #000000;
-  --focus-shadow: 0 0 3px 3px dodgerblue;
+  --focus-shadow-input: 0 0 4px 1px var(--color-green-50);
+  --focus-shadow-button: 0 0 4px 4px dodgerblue;
 }
 
 /* Typography */
@@ -70,20 +71,20 @@ body {
 /* Layout */
 .viewport {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  /* 그리드를 굳이 사용하지 않아도 됐음...*/
 }
 
-.cover-src {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.section-form {
+  margin-left: 50%;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
 .wrapper {
   max-width: 520px;
   margin: auto;
-  padding: 20px;
 }
 
 
@@ -114,25 +115,11 @@ label {
 .input-outline:has(select:focus), 
 .input-outline:has(textarea:focus) {
   border-color: var(--color-green-50);
+  box-shadow: var(--focus-shadow-input);
 }
 
 .select-arrow {
   width: 9px;
-}
-
-.button {
-  width: 100%;
-  height: 64px;
-  line-height: 64px; 
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--color-white);
-  background-color: var(--color-green-50);
-  border-radius: 4px;
-}
-.button:focus {
-  box-shadow: var(--focus-shadow);
 }
 
 .option {
@@ -160,9 +147,9 @@ label {
 .option:has(input:disabled)::before {
   background-color: var(--color-grey-10);
 }
+
 .radio {
   height: 48px;
-  min-width: 160px;
   padding: 12px 11px;
   border: 2px solid var(--color-grey-20);
   box-sizing: border-box;
@@ -170,6 +157,7 @@ label {
 }
 .radio:has(input:focus) {
   border-color: var(--color-green-50);
+  box-shadow: var(--focus-shadow-input);
 }
 .radio:has(input:disabled) {
   border-color: var(--color-grey-20);
@@ -189,6 +177,7 @@ label {
 }
 .option.check:has(input:focus)::before {
   border-color: var(--color-green-50);
+  box-shadow: var(--focus-shadow-input)
 }
 .option.check:has(input:checked)::before {
   background-color: white;
@@ -198,29 +187,67 @@ label {
   background-position: center;
 }
 
+.button {
+  width: 100%;
+  height: 64px;
+  line-height: 64px; 
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-green-50);
+  border-radius: 4px;
+}
+.button:focus {
+  box-shadow: var(--focus-shadow-button);
+}
+
 /* Components */
+.cover {
+  height: 100vh;
+  width: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.cover-src {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .form-title {
   margin-bottom: 34px;
   font-size: 3.2rem;
   font-weight: 700;
   color: var(--color-green-70);
 }
+
 .form-item {
   margin-bottom: 30px;
 }
+
 .input-label {
   margin-bottom: 12px;
 }
-.choice-group {
+
+.choice-group.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 18px;
+}
+
+.choice-group.flex {
   display: flex;
   gap: 18px;
 }
 
 @media (max-width: 700px) {
-  .viewport {
-    display: block;
-  }
   .cover {
     display: none;
+  }
+  .section-form {
+    margin: 0 auto;
   }
 }

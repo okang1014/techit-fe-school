@@ -14,73 +14,75 @@
       <div class="cover">
         <img class="cover-src" src="images/cover.png" alt="Background image with a laptop and a coffee mug, positioned at the left of the page">
       </div>
-      <div class="wrapper">
-        <h1 class="form-title">회의실 예약</h1>
-        <form action="/submit" method="post">
-          <fieldset class="general-info">
-            <legend class="ir">일반 정보</legend>
+      <section class="section-form">
+        <div class="wrapper">
+          <h1 class="form-title">회의실 예약</h1>
+          <form action="/submit" method="post">
+            <fieldset class="general-info">
+              <legend class="ir">일반 정보</legend>
 
-            <div class="form-item">
-              <label class="input-label" for="purpose">어떤 용도로 이용할 예정이신가요?</label>
-              <div class="input-outline">
-                <select id="purpose">
-                  <option selected>디자이너와의 티타임</option>
-                  <option>개발자 코드 리뷰</option>
-                  <option>월간 결산 회의</option>
-                </select>
-                <img class="select-arrow" src="images/selectbox.svg">
+              <div class="form-item">
+                <label class="input-label" for="purpose">어떤 용도로 이용할 예정이신가요?</label>
+                <div class="input-outline">
+                  <select id="purpose">
+                    <option selected>디자이너와의 티타임</option>
+                    <option>개발자 코드 리뷰</option>
+                    <option>월간 결산 회의</option>
+                  </select>
+                  <img class="select-arrow" src="images/selectbox.svg">
+                </div>
               </div>
-            </div>
 
-            <div class="form-item">
-              <label class="input-label" for="size">회의의 규모는 어떠한가요?</label>
-              <div class="choice-group">
-                <label class="option radio"><input type="radio" id="size-small" name="size">2~8인</label>
-                <label class="option radio"><input type="radio" id="size" name="size-medium">9~20인</label>
-                <label class="option radio"><input type="radio" id="size" name="size-large" disabled>21~100인</label>
+              <div class="form-item">
+                <label class="input-label" for="size">회의의 규모는 어떠한가요?</label>
+                <div class="choice-group grid">
+                  <label class="option radio"><input type="radio" id="size-small" name="size">2~8인</label>
+                  <label class="option radio"><input type="radio" id="size" name="size">9~20인</label>
+                  <label class="option radio"><input type="radio" id="size" name="size" disabled>21~100인</label>
+                </div>
               </div>
-            </div>
 
-            <div class="form-item">
-              <label class="input-label" for="equipment">어떤 장비가 필요하신가요?</label>
-              <div class="choice-group">
-                <label class="option check"><input type="checkbox" id="equipment" name="equipment">빔 프로젝터</label>
-                <label class="option check"><input type="checkbox" id="equipment" name="equipment">화이트보드</label>
-                <label class="option check"><input type="checkbox" id="equipment" name="equipment">전동데스크</label>
+              <div class="form-item">
+                <label class="input-label" for="equipment">어떤 장비가 필요하신가요?</label>
+                <div class="choice-group flex">
+                  <label class="option check"><input type="checkbox" id="equipment" name="equipment">빔 프로젝터</label>
+                  <label class="option check"><input type="checkbox" id="equipment" name="equipment">화이트보드</label>
+                  <label class="option check"><input type="checkbox" id="equipment" name="equipment">전동데스크</label>
+                </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
 
-          <fieldset class="personal-info">
-            <legend class="ir">개인 정보</legend>
+            <fieldset class="personal-info">
+              <legend class="ir">개인 정보</legend>
 
-            <div class="form-item">
-              <label class="input-label" for="reserved_by">예약자의 성함을 알려주세요.</label>
-              <div class="input-outline">
-                <input type="text" id="reserved_by" placeholder="성함 입력">
+              <div class="form-item">
+                <label class="input-label" for="reserved_by">예약자의 성함을 알려주세요.</label>
+                <div class="input-outline">
+                  <input type="text" id="reserved_by" placeholder="성함 입력">
+                </div>
               </div>
-            </div>
 
-            <div class="form-item">
-              <label class="input-label" for="email">이메일을 입력해주세요.</label>
-              <div class="input-outline">
-                <input type="email" id="email" placeholder="example@email.com">
+              <div class="form-item">
+                <label class="input-label" for="email">이메일을 입력해주세요.</label>
+                <div class="input-outline">
+                  <input type="email" id="email" placeholder="example@email.com">
+                </div>
               </div>
-            </div>
 
-            <div class="form-item">
-              <label class="input-label" for="topic">회의의 주제를 남겨 주세요.</label>
-              <div class="input-outline">
-                <textarea id="topic" placeholder="주제에 대한 짧은 요약" rows="5"></textarea>
+              <div class="form-item">
+                <label class="input-label" for="topic">회의의 주제를 남겨 주세요.</label>
+                <div class="input-outline">
+                  <textarea id="topic" placeholder="주제에 대한 짧은 요약" rows="5"></textarea>
+                </div>
               </div>
-            </div>
 
-          </fieldset>
-          <button class="button" type="button">예약 완료하기</button>
+            </fieldset>
+            <button class="button" type="button">예약 완료하기</button>
 
-        </form>
-      </div>
-    <!-- </div> -->
+          </form>
+        </div>
+      </section>
+    </div>
 
   </body>
 </html>
