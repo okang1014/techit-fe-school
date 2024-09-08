@@ -16,11 +16,16 @@ fieldset {
 
 input[type="text"], input[type="email"], select {
   all: unset;
+  display: block;
+  width: 100%;
+  line-height: 1;
 }
 
 
 textarea {
   all: unset;
+  display: block;
+  width: 100%;
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -74,26 +79,6 @@ body {
 
 
 /* Commons */
-input[type="text"], input[type="email"], select {
-  border: 2px solid var(--color-grey-20);
-  border-radius: 4px;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 14px;
-  height: 48px;
-  line-height: 1;
-}
-textarea {
-  border: 2px solid var(--color-grey-20);
-  border-radius: 4px;
-  min-height: 120px;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 14px;
-}
-
 .ir {
 	position: absolute;
 	clip: rect(0 0 0 0);
@@ -105,6 +90,20 @@ textarea {
 
 label {
   display: block;
+}
+
+.input-outline {
+  box-shadow: inset 0 0 10px red;
+  border: 2px solid var(--color-grey-20);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.select-arrow {
+  height: 100%;
 }
 
 .button {

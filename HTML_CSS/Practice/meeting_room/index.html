@@ -18,16 +18,21 @@
           <fieldset class="general-info">
             <legend class="ir">일반 정보</legend>
 
-            <div class="form-item purpose">
+            <div class="form-item">
               <label class="input-label" class="input-label" for="purpose">어떤 용도로 이용할 예정이신가요?</label>
-              <select id="purpose">
-                <option selected>디자이너와의 티타임</option>
-                <option>개발자 코드 리뷰</option>
-                <option>월간 결산 회의</option>
-              </select>
+              <div class="input-outline">
+                <select id="purpose">
+                  <option selected>디자이너와의 티타임</option>
+                  <option>개발자 코드 리뷰</option>
+                  <option>월간 결산 회의</option>
+                </select>
+                <div>
+                  <img class="select-arrow" src="images/selectbox.svg">
+                </div>
+              </div>
             </div>
 
-            <div class="form-item size">
+            <div class="form-item">
               <label class="input-label" for="size">회의의 규모는 어떠한가요?</label>
               <div class="choice-group">
                 <label><input type="radio" id="size" name="size">2~8인</label>
@@ -36,7 +41,7 @@
               </div>
             </div>
 
-            <div class="form-item equipment">
+            <div class="form-item">
               <label class="input-label" for="equipment">어떤 장비가 필요하신가요?</label>
               <div class="choice-group">
                 <label><input type="checkbox" id="equipment" name="equipment">빔 프로젝터</label>
@@ -49,19 +54,25 @@
           <fieldset class="personal-info">
             <legend class="ir">개인 정보</legend>
 
-            <div class="form-item reserved_by">
+            <div class="form-item">
               <label class="input-label" for="reserved_by">예약자의 성함을 알려주세요.</label>
-              <input type="text" id="reserved_by" placeholder="성함 입력">
+              <div class="input-outline">
+                <input type="text" id="reserved_by" placeholder="성함 입력">
+              </div>
             </div>
 
-            <div class="form-item email">
+            <div class="form-item">
               <label class="input-label" for="email">이메일을 입력해주세요.</label>
-              <input type="email" id="email" placeholder="example@email.com">
+              <div class="input-outline">
+                <input type="email" id="email" placeholder="example@email.com">
+              </div>
             </div>
 
-            <div class="form-item topic">
+            <div class="form-item">
               <label class="input-label" for="topic">회의의 주제를 남겨 주세요.</label>
-              <textarea id="topic" placeholder="주제에 대한 짧은 요약" rows="5"></textarea>
+              <div class="input-outline">
+                <textarea id="topic" placeholder="주제에 대한 짧은 요약" rows="5"></textarea>
+              </div>
             </div>
 
           </fieldset>
