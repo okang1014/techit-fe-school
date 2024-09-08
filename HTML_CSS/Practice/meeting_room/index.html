@@ -10,8 +10,10 @@
   </head>
   <body>
 
-    <!-- <div class="viewport"> -->
-      <!-- <div class="cover">COVER</div> -->
+    <div class="viewport">
+      <div class="cover">
+        <img class="cover-src" src="images/cover.png" alt="Background image with a laptop and a coffee mug, positioned at the left of the page">
+      </div>
       <div class="wrapper">
         <h1 class="form-title">회의실 예약</h1>
         <form action="/submit" method="post">
@@ -35,7 +37,7 @@
               <div class="choice-group">
                 <label class="option radio"><input type="radio" id="size" name="size">2~8인</label>
                 <label class="option radio"><input type="radio" id="size" name="size">9~20인</label>
-                <label class="option radio"><input type="radio" id="size" name="size">21~100인</label>
+                <label class="option radio"><input type="radio" id="size" name="size" disabled>21~100인</label>
               </div>
             </div>
 

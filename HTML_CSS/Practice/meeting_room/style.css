@@ -3,7 +3,12 @@ body {
   margin: unset;
 }
 
-.form-title {
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
+h1 {
   margin: unset;
   font-size: unset;
   font-weight: unset;
@@ -64,19 +69,21 @@ body {
 
 /* Layout */
 .viewport {
-  box-shadow: inset 0 0 10px red;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.cover {
-  box-shadow: inset 0 0 10px green;
+.cover-src {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .wrapper {
   width: 520px;
   margin: auto;
+  padding-block: 20px;
 }
 
 
@@ -110,7 +117,7 @@ label {
 }
 
 .select-arrow {
-  height: 100%;
+  width: 9px;
 }
 
 .button {
@@ -146,6 +153,27 @@ label {
 .option:has(input:checked)::before {
   background-color: var(--color-green-50);
   box-shadow: inset 0 0 0 5px var(--color-white);
+}
+.option:has(input:disabled) {
+  color: var(--color-grey-40);
+}
+.option:has(input:disabled)::before {
+  background-color: var(--color-grey-10);
+}
+.radio {
+  height: 48px;
+  min-width: 160px;
+  padding: 12px 11px;
+  border: 2px solid var(--color-grey-20);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.radio:has(input:focus) {
+  border-color: var(--color-green-50);
+}
+.radio:has(input:disabled) {
+  border-color: var(--color-grey-20);
+  background-color: var(--color-grey-10);
 }
 
 .option.check::before {
@@ -186,15 +214,4 @@ label {
 .choice-group {
   display: flex;
   gap: 18px;
-}
-.radio {
-  height: 48px;
-  min-width: 160px;
-  padding: 12px 11px;
-  border: 2px solid var(--color-grey-20);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.radio:has(input:focus) {
-  border-color: var(--color-green-50);
 }
