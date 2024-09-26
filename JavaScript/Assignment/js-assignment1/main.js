@@ -15,6 +15,16 @@ let products = [
   new Product('중뱃살', 1000),
 ]
 
-console.dir(products)
+console.log(products)
 
-// products.forEach()
+let listNode = document.getElementById('list');
+
+//products 배열 내의 아이템 개수만큼 html 화면에 출력
+for (let i = 0; i < products.length; i++) {
+  let productNode = document.createElement('option');
+  let productTextNode = document.createTextNode(`${products[i].name} - ${products[i].price}`);
+
+  productNode.appendChild(productTextNode);
+  console.log(productNode)
+  listNode.appendChild(productNode);
+}
