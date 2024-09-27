@@ -26,11 +26,13 @@ listNode.setAttribute('size', products.length);
 
 //products 배열 내의 상품 html 화면에 출력
 for (let i = 0; i < products.length; i++) {
-  let productInfo = `${products[i].name} - ${products[i].price}`
+  let productName = `${products[i].name}`
+  let productPrice = `${products[i].price}`
   let productNode = document.createElement('option');
-  productNode.setAttribute('id', `product`)
-  productNode.setAttribute('value', productInfo)
-  let productTextNode = document.createTextNode(productInfo);
+  productNode.setAttribute('class', `product`)
+  productNode.setAttribute('id', productName)
+  productNode.setAttribute('value', productPrice)
+  let productTextNode = document.createTextNode(`${productName} - ${productPrice}`);
 
   productNode.appendChild(productTextNode);
   listNode.appendChild(productNode);
@@ -48,29 +50,49 @@ let productNode = listNode.querySelectorAll('option');
 let cart = document.getElementById('cart');
 
 let productSelected = [];
+let priceSelected = [];
 productNode.forEach((product) => {
   product.addEventListener('click', () => {
     //productSelected 배열에 product 의 값이 동일한 요소가 없으면 배열에 추가
-    if (productSelected.every((value) => value !== product.value)) {
+    if (productSelected.every((value) => value !== product.textContent)) {
       productSelected.push(product.textContent);
-      console.log(productSelected);
+      priceSelected.push(product.value);
+      console.log(priceSelected);
     } else {
       //productSelected 배열에 선택한 상품이 있는 경우, 배열에서 삭제
-      let index = productSelected.findIndex((value) => value == product.value);
+      let index = productSelected.findIndex((value) => value == product.textContent);
       productSelected.splice(index, 1);
-      console.log(productSelected);
+      priceSelected.splice(index, 1);
+      console.log(priceSelected);
     }
 
     //선택한 상품이 담긴 배열 cartList 에 출력
-    let items = ''
+    let items = '';
+    let total = 0;
+
+    //선택한 상품이 없는 경우
     if (productSelected.length === 0) {
+      //선택한 상품, 총액 영역 표시 X
+      //총액 노드 value = 0
+      cart.setAttribute('style', 'display: none;');
       cartList.innerHTML = '';
-    } else {
+      totalPrice.innerText = '';
+      totalPrice.setAttribute('value', 0);
+    } else {//선택한 상품이 있는 경우
+      //선택한 상품 영역 표시
+      //li 노드 추가하여 출력
       productSelected.forEach((product) => {
         cart.setAttribute('style', 'display: block;');
         items += `<li>${product}</li>`;
         cartList.innerHTML = items;
-      })
+      });
+      //선택한 상품의 가격 표시, 각 
+      priceSelected.forEach((price) => {
+        console.log(typeof price);
+        total += Number(price);
+        totalPrice.setAttribute('value', `${total}`);
+        totalPrice.innerText = total;
+      });
     }
   })
 })
