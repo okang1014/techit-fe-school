@@ -10,17 +10,43 @@
       margin-bottom: 1rem;
     }
   </style>
+
 </head>
 
 <body>
   <h2>결제창</h2>
-  <div>7000원 을 결제하겠습니다.</div>
+  <div><span id="price"></span>원을 결제하겠습니다.</div>
   <div>신용카드 번호를 입력하고 결제 버튼을 눌러주세요</div>
   <form>
-    <input type="text" placeholder="신용카드 번호">
-    <button>결제</button>
+    <input type="text" id="cardNum" placeholder="신용카드 번호">
+    <button id="payment">결제</button>
   </form>
-  <script src="main.js"></script>
+  <script>
+
+    let paymentBtn = document.getElementById('payment');
+    let cardNum = document.getElementById('cardNum');
+
+    paymentBtn.addEventListener('click', (e) => {
+      //결제 버튼 클릭 시 카드 신용카드 번호 유효성 검사
+      let number = cardNum.value;
+      let regExpCardNum = /^[0-9.-]*$/;
+      console.log(number);
+      e.preventDefault();
+      if (number == 0 || number.trim().length == 0) {
+        //카드번호 미입력 시
+        alert('신용카드 번호를 입력해 주세요.')
+      } else {
+        if (!regExpCardNum.test(number)) {
+          //유효하지 않은 카드번호 입력 시
+          alert('올바른 신용카드 번호를 입력해 주세요.');
+        } else {
+          //유효한 카드번호 입력 시 얼럿, 새로고침
+          alert(`${number} 로 7000 원이 결제 완료되었습니다.`);
+          location.reload()
+        }
+      }
+    })
+  </script>
 </body>
 
 </html>
