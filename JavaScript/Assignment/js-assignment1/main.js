@@ -34,19 +34,43 @@ for (let i = 0; i < products.length; i++) {
 
   productNode.appendChild(productTextNode);
   listNode.appendChild(productNode);
-
-  //product 항목을 선택 시 선택한 상품 리스트에 추가
-  productNode.addEventListener('click', () => {
-    let productSelected = list.querySelectorAll('option:checked');
-    productSelected.forEach(data => {
-      let cartItem = document.createElement('li');
-      let cartItemText = document.createTextNode(`${data.textContent}`)
-      cartItem.appendChild(cartItemText);
-      cartList.append(cartItem);
-    });
-
-    let cartItem = cartList.querySelectorAll('li')
-    console.log(cartItem)
-  })
 }
 
+//product 항목을 선택 시 선택한 상품 리스트에 추가
+let productNode = listNode.querySelectorAll('option');
+
+//클릭 이벤트로 할 경우
+//1. 하나의 아이템 최초로 클릭했을 때는 list Node 에 추가
+//2. 두번째로 클릭했을 때는 listNode 에서 제거
+// 클릭했던 노드를 배열에 넣고, 반환
+// 재차 클릭한 경우, 배열에서 삭제
+
+let cart = document.getElementById('cart');
+
+let productSelected = [];
+productNode.forEach((product) => {
+  product.addEventListener('click', () => {
+    //productSelected 배열에 product 의 값이 동일한 요소가 없으면 배열에 추가
+    if (productSelected.every((value) => value !== product.value)) {
+      productSelected.push(product.textContent);
+      console.log(productSelected);
+    } else {
+      //productSelected 배열에 선택한 상품이 있는 경우, 배열에서 삭제
+      let index = productSelected.findIndex((value) => value == product.value);
+      productSelected.splice(index, 1);
+      console.log(productSelected);
+    }
+
+    //선택한 상품이 담긴 배열 cartList 에 출력
+    let items = ''
+    if (productSelected.length === 0) {
+      cartList.innerHTML = '';
+    } else {
+      productSelected.forEach((product) => {
+        cart.setAttribute('style', 'display: block;');
+        items += `<li>${product}</li>`;
+        cartList.innerHTML = items;
+      })
+    }
+  })
+})
