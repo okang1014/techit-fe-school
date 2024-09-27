@@ -9,18 +9,19 @@
 
 <body>
   <h2>참치회 특가 판매</h2>
-  <select id="list" for="product" multiple>
-  </select>
-  <div id="cart" style="display: none;">
-    <h2>선택한 상품</h2>
-    <ul id="cart-list">
-    </ul>
-    <h3>총액 : <span id="total-price" value="0"></span></h3>
+  <form>
+    <select id="list" for="product" multiple>
+    </select>
+    <div id="cart" style="display: none;">
+      <h2>선택한 상품</h2>
+      <ul id="cart-list"></ul>
+      <h3>총액 : <span id="total-price" value="0"></span></h3>
 
-  </div>
-  <div>
-    <button id="checkout">결제하기</button>
-  </div>
+    </div>
+    <div>
+      <button id="checkout">결제하기</button>
+    </div>
+  </form>
   <script src="main.js"></script>
 </body>
 

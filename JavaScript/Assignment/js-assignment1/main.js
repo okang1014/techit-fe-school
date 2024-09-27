@@ -19,6 +19,7 @@ let products = [
 let listNode = document.getElementById('list');
 let cartList = document.getElementById('cart-list')
 let totalPrice = document.getElementById('total-price');
+let checkoutBtn = document.getElementById('checkout');
 
 //조건 1 - JS 의 상품정보대로 초기화면 출력
 //products 배열 내의 상품 개수만큼 리스트 크기 조정
@@ -74,7 +75,7 @@ productNode.forEach((product) => {
     if (productSelected.length === 0) {
       //선택한 상품, 총액 영역 표시 X
       //총액 노드 value = 0
-      cart.setAttribute('style', 'display: none;');
+      // cart.setAttribute('style', 'display: none;');
       cartList.innerHTML = '';
       totalPrice.innerText = '';
       totalPrice.setAttribute('value', 0);
@@ -86,13 +87,32 @@ productNode.forEach((product) => {
         items += `<li>${product}</li>`;
         cartList.innerHTML = items;
       });
-      //선택한 상품의 가격 표시, 각 
+      //선택한 상품의 가격 표시, 총합 노드 value 는 가격 총액
       priceSelected.forEach((price) => {
-        console.log(typeof price);
-        total += Number(price);
+        total += parseInt(price);
         totalPrice.setAttribute('value', `${total}`);
         totalPrice.innerText = total;
       });
     }
   })
 })
+
+
+//결제하기 버튼을 클릭하면
+//1. 어떠한 값도 선택되지 않은 경우 - alert 창 출력
+//2. 값을 선택한 경우 checkout.html 출력
+
+//이걸 하기 위해서 특정 노드를 선택, 
+
+checkoutBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (!cartList.hasChildNodes()) {
+    alert('결제할 상품을 선택해 주세요.');
+  } else {
+    window.open(
+      '/checkout.html',
+      '_blank',
+      'left=100, top=100, width=500, height=300'
+    )
+  }
+});
