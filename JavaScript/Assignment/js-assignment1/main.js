@@ -104,8 +104,18 @@ productNode.forEach((product) => {
 
 //이걸 하기 위해서 특정 노드를 선택, 
 
+
+
 checkoutBtn.addEventListener('click', (e) => {
   e.preventDefault();
+
+  var price = totalPrice.innerText;
+  function printPrice() {
+    return price;
+  }
+  printPrice()
+  console.log(price);
+
   if (!cartList.hasChildNodes()) {
     alert('결제할 상품을 선택해 주세요.');
   } else {
@@ -116,3 +126,4 @@ checkoutBtn.addEventListener('click', (e) => {
     )
   }
 });
+
