@@ -120,7 +120,7 @@ checkoutBtn.addEventListener('click', (e) => {
     alert('결제할 상품을 선택해 주세요.');
   } else {
     window.open(
-      '/checkout.html',
+      'checkout.html',
       '_blank',
       'left=100, top=100, width=500, height=300'
     )
