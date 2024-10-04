@@ -1,0 +1,113 @@
+/* CSS Resets */
+body {
+  margin: unset;
+  padding: unset;
+}
+
+h2 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+p {
+  margin: unset;
+  padding: unset;
+}
+
+input[type=text], button {
+  all: unset;
+}
+
+input[type=text] {
+  display: block;
+  width: 100%;
+}
+
+button {
+  display: block;
+  width: 100%;
+}
+
+img {
+  vertical-align: top;
+  height: 100%;
+}
+/* Typography */
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/* Layouts */ 
+.viewport {
+  min-height: 100vh;
+  padding-block: 20px;
+  box-sizing: border-box;
+  align-content: center;
+}
+
+.wrapper{
+  max-width: 900px;
+  margin: auto;
+  padding-inline: 20px;
+}
+
+
+/* Components */
+.header {
+  text-align: center;
+}
+
+.header-title {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.header-subtext {
+  margin: 20px auto;
+  color: #999;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header-subtext::before, .header-subtext::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 80px;
+  background-color: #999;
+}
+
+.search-bar {
+  width: 600px;
+  height: 30px;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+  gap: 16px;
+  border: 1px solid #ccc;
+  border-radius:30px;
+}
+
+#search {
+  /* box-shadow: inset 0 0 10px red; */
+  padding: 10px;
+}
+.search-bar:has(*:focus) {
+  box-shadow: 0 0 10px #999;
+}
+.controls {
+  padding-inline: 10px;
+}
+
+.button {
+  height: 100%;
+  text-align: center;
+}
