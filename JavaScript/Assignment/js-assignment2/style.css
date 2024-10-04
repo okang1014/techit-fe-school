@@ -94,6 +94,15 @@ body {
   gap: 16px;
   border: 1px solid #ccc;
   border-radius:30px;
+  position: relative;
+}
+.alert {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 1.6rem;
+  color: rgb(228, 0, 0);
+  transform: translate(20px, -50%);
 }
 
 #search {

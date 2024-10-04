@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
   console.log('loaded');
 
   //필요한 노드 획득
+  let searchBar = document.querySelector('.search-bar');
   let searchNode = document.getElementById('search');
   let btnNode = document.getElementById('search-button');
   let resultNode = document.getElementById('results');
@@ -71,8 +72,43 @@ window.addEventListener('load', () => {
     resultNode.appendChild(article);
   }
 
+  //검색어 입력하지 않은 경우 
+  let printErrorMessage = function () {
+    searchBar.setAttribute('style', 'border: 1px solid rgb(228, 0, 0)');
+    searchNode.removeAttribute('placeholder');
+
+    let alertNode = document.createElement('p');
+    alertNode.setAttribute('class', 'alert');
+    let alertTxt = document.createTextNode('검색어가 입력되지 않았습니다.');
+    alertNode.appendChild(alertTxt);
+
+    searchBar.appendChild(alertNode);
+  }
+
   btnNode.addEventListener('click', () => {
-    wrapperNode.setAttribute('style', 'margin-top: 100px');
-    printSearchResult();
-  })
+    //사용자 입력 검색어 획득
+    let searchKeyword = searchNode.value;
+
+    if (searchKeyword == 0 || searchKeyword.trim().length == 0) {
+      //사용자 검색어 미입력 후 클릭 시 경고 얼럿 출력
+      printErrorMessage();
+      searchNode.addEventListener('focus', () => {
+        searchBar.removeChild(document.querySelector('.alert'));
+        searchBar.removeAttribute('style');
+        searchNode.setAttribute('placeholder', '검색어를 입력해 주세요.')
+      });
+    } else {
+      //레이아웃 조정
+      wrapperNode.setAttribute('style', 'margin-top: 100px');
+      //사용자 검색 시간 획득
+      let time = new Date();
+      let year = time.getFullYear();
+      let month = time.getMonth();
+      let date = time.getDate();
+      let searchTime =
+        `${year}-${month < 10 ? '0' + month : month}-${date < 10 ? '0' + date : date}`;
+
+      console.log(searchKeyword, searchTime);
+    }
+  });
 });
