@@ -13,20 +13,51 @@
   <div class="viewport">
     <div class="wrapper">
       <header class="header">
-        <h2 class="header-title">News Search</h2>
+        <h1 class="header-title">News Search</h1>
         <p class="header-subtext">https://newsapi.org</p>
       </header>
 
-      <form for="search">
-        <div class="search-bar">
-          <input type="text" placeholder="검색어를 입력해 주세요." id="search">
-          <div class="controls">
-            <button class="button" id="search-button">
-              <img src="images/search-icon.svg" class="search-icon">
-            </button>
-          </div>
+      <div class="search-bar">
+        <input type="text" placeholder="검색어를 입력해 주세요." id="search">
+        <div class="controls">
+          <button id="search-button" class="button">
+            <img src="images/search-icon.svg" class="search-icon" alt="search-icon">
+          </button>
         </div>
-      </form>
+      </div>
+
+      <hr>
+      <article id="results">
+        <section class="article-main">
+          <h2 class="article-title">article title</h2>
+          <div class="article-info">
+            <p>article info</p>
+            <a href="#">more</a>
+          </div>
+          <p class="article-text">
+            article
+          </p>
+        </section>
+        <section class="article-cover">
+          image
+        </section>
+      </article>
+      <hr>
+      <article id="results">
+        <section class="article-main">
+          <h2 class="article-title">article title</h2>
+          <div class="article-info">
+            <p>article info</p>
+            <a href="#">more</a>
+          </div>
+          <p class="article-text">
+            article
+          </p>
+        </section>
+        <section class="article-cover">
+          <img src="images/princess.jpg">
+        </section>
+      </article>
     </div>
   </div>
 </body>
