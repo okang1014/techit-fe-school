@@ -7,7 +7,9 @@ window.addEventListener('load', () => {
   let searchNode = document.getElementById('search');
   let btnNode = document.getElementById('search-button');
   let resultNode = document.getElementById('results');
+  let wrapperNode = document.querySelector('.wrapper');
 
+  //result 부분에 데이터 출력
   let printSearchResult = function () {
     //articleTitle
     let articleTitle = document.createElement('h2');
@@ -68,5 +70,9 @@ window.addEventListener('load', () => {
     resultNode.appendChild(hrNode);
     resultNode.appendChild(article);
   }
-  printSearchResult();
+
+  btnNode.addEventListener('click', () => {
+    wrapperNode.setAttribute('style', 'margin-top: 100px');
+    printSearchResult();
+  })
 });
