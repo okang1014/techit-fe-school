@@ -11,21 +11,22 @@ window.addEventListener('load', () => {
   let wrapperNode = document.querySelector('.wrapper');
 
   //result 부분에 데이터 출력
-  let printSearchResult = function () {
+  let printSearchResult = function (obj) {
     //articleTitle
     let articleTitle = document.createElement('h2');
     articleTitle.setAttribute('class', 'article-title');
-    let articleTitleTxt = document.createTextNode('article-title'); //동적 데이터 수신, 텍스트 입력
+    let articleTitleTxt = document.createTextNode(`${obj.title}`);
     articleTitle.appendChild(articleTitleTxt);
 
     //articleInfo
     let articleInfo = document.createElement('p');
-    let articleInfoTxt = document.createTextNode('article-info'); //추후 동적 데이터 수신 후 텍스트 넣을 예정
+    let articleInfoTxt = document.createTextNode(`${obj.author}, ${obj.publishedAt}`);
     articleInfo.appendChild(articleInfoTxt);
 
     //moreLink
     let moreLink = document.createElement('a');
-    moreLink.setAttribute('href', '#');
+    moreLink.setAttribute('href', `${obj.url}`);
+    moreLink.setAttribute('target', '_blank');
     let moreLinkTxt = document.createTextNode('more');
     moreLink.appendChild(moreLinkTxt);
 
@@ -38,7 +39,7 @@ window.addEventListener('load', () => {
     //articleTxt
     let articleTxt = document.createElement('p');
     articleTxt.setAttribute('class', 'article-text');
-    let articleTxtContent = document.createTextNode('article-textcontent'); //추후 동적 데이터 수신, 텍스트 입력 
+    let articleTxtContent = document.createTextNode(`${obj.description}`);
     articleTxt.appendChild(articleTxtContent);
 
     //articleMain = articleTitle + articeInfoSeciton + articleTxt
@@ -50,7 +51,7 @@ window.addEventListener('load', () => {
 
     //articleCoverSrc
     let articleCoverSrc = document.createElement('img');
-    articleCoverSrc.setAttribute('src', '#'); //동적으로 데이터 수신, 이미지 url 입력하도록
+    articleCoverSrc.setAttribute('src', `${obj.urlToImage == null ? 'images/no-photo.jpg' : obj.urlToImage}`);
     articleCoverSrc.setAttribute('alt', 'article-cover-img');
 
     //articleCover
@@ -72,7 +73,7 @@ window.addEventListener('load', () => {
     resultNode.appendChild(article);
   }
 
-  //검색어 입력하지 않은 경우 
+  //검색어 입력하지 않은 경우, 하이라이트 표시
   let printErrorMessage = function () {
     searchBar.setAttribute('style', 'border: 1px solid rgb(228, 0, 0)');
     searchNode.removeAttribute('placeholder');
@@ -85,7 +86,8 @@ window.addEventListener('load', () => {
     searchBar.appendChild(alertNode);
   }
 
-  btnNode.addEventListener('click', () => {
+  btnNode.addEventListener('click', (e) => {
+    e.preventDefault();
     //사용자 입력 검색어 획득
     let searchKeyword = searchNode.value;
 
@@ -108,7 +110,30 @@ window.addEventListener('load', () => {
       let searchTime =
         `${year}-${month < 10 ? '0' + month : month}-${date < 10 ? '0' + date : date}`;
 
-      console.log(searchKeyword, searchTime);
+      //XMLHttpRequest
+      let xhr = new XMLHttpRequest();
+      xhr.open('get', `https://newsapi.org/v2/everything?q=${searchKeyword}&from=${searchTime}&sortBy=publishedAt&apiKey=44dbdbd5948d48e39c3343f8c6a8699d`, true);
+      xhr.send();
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          //HTTP request 정상 요청 완료 
+          let data = JSON.parse(xhr.responseText);
+
+          //결과 출력
+          if (data.articles.length == 0) {
+            //검색어에 해당하는 기사가 없는 경우
+            resultNode.innerHTML = '<h3 style="text-align: center; margin-top: 20px;">표시할 기사가 없습니다 😭</h3>'
+          } else {
+            //검색어에 해당하는 기사가 있는 경우
+            resultNode.innerHTML = ''; //기존 검색 결과가 표시되고 있는 경우, 초기화
+            //검색어에 해당하는 기사 10개만 출력
+            for (let i = 0; i < 10; i++) {
+              let news = data.articles[i];
+              printSearchResult(news);
+            }
+          }
+        }
+      }
     }
   });
 });
