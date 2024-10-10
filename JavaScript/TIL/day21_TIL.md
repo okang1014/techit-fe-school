@@ -73,7 +73,7 @@ html 문서에서 <input type="file"> 태그를 추가하면 화면에 자동으
 
 **<input type="file"> 에 추가 가능한 속성**
 - multiple - 사용자가 다수의 파일을 선택하여 업로드 가능
-- accept - <accept="image/*">, <accept=".txt, .jpg"> 등 특정 파일 경로의 파일, 또는 특정 확장자를 가지고 있는 파일만 업로드
+- accept - <accept="image/*">, <accept=".txt, .jpg"> 등 특정 타입(MIME 타입)의 파일, 또는 특정 확장자를 가지고 있는 파일만 업로드
 이렇게 선택된 파일은 File 과 Filelist 객체에 담겨서 이용 가능
 File - 사용자가 선택한 파일과 파일에 대한 정보를 포함
 Filelist - File 객체를 저장하는 객체
